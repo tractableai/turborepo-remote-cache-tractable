@@ -1,0 +1,93 @@
+apiVersion: backstage.io/v1alpha1
+## More info on what kinds of entities to use:
+## https://developer-portal.tractable.io/docs/default/component/developer-portal-backstage/service_catalog/entities/
+## We advise to just add 1 Component if you are getting started. Later on you can add more stuff like Systems, APIs, Resources, etc.
+kind: Component
+metadata:
+  ## (Required) The metadata.name is part of the unique id! Please only use [a-z0-9A-Z-_.]
+  ## This will be the id others will use to reference to this component
+  name: turborepo-remote-cache-tractable
+  ## (Optional) Human-readable and displayed title for your component
+  title: turborepo-remote-cache-tractable
+  ## (Required) A short description
+  description: What component am I? What do I do?
+  ## (Required) Additional links you want to display in your entity overview page
+  links:
+   ## (Required) Links back to your entity's source code, but also enables extra information in the Github tab of your entity's catalogue page.
+    - url: https://github.com/tractableai/turborepo-remote-cache-tractable
+      title: Codebase
+    ## (Required) A link either to a slack channel or support portal, or a document somewhere that describes the support process for this entity.
+    # - url: https://tractable.slack.com/archives/C0K1X1CRF
+    #   title: Support
+    ## (Required) A link to an appropriate slack channel for anyone with questions about the entity.
+    # - url: https://tractable.slack.com/archives/C0K1X1CRF
+    #   title: Slack
+    ## (Optional - Recommended) Linked confluence docs, mkdocs, or ADRs or use the annotations below to reference to markdown documentation or ADRs
+    # - url: https:/developer-portal.tractable.io/docs/default/component/developer-portal-backstage/tech_docs/onboarding_guide/
+    #   title: Documentation
+    ## (Optional - Recommended) A link to resources (Zoom recording, doc, slides) relating to the design review for the entity.
+    # - url: https://tractable.atlassian.net/wiki/spaces/INFRA/pages/3852107812/Developer+Portal+2.0+Design+Review.
+    #   title: Design Review
+    ## (Optional - Recommended) Links to datadog dashboards, monitors, or an embedded dashboard in the Datadog tab using the annotations below
+    # - url: https://app.datadoghq.eu/dashboard/n44-pea-he6/rum---web-app-performance-developer-portal?fromUser=false&refresh_mode=sliding&view=spans&from_ts=1712848660460&to_ts=1712852260460&live=true
+    #   title: Datadog
+    ## (Optional - Recommended) A link to a document detailing the disaster recovery procedure for the entity.
+    # - url: https://tractable.atlassian.net/wiki/
+    #   title: DR Procedure
+  annotations:
+    ## (Required) Add your org/repository to enable GitHub features
+    github.com/project-slug: tractableai/turborepo-remote-cache-tractable
+    ## (Optional - Recommended) Use this to reference to markdown documentation or add a link to your documentation in the links section above
+    ## More info: https:/developer-portal.tractable.io/docs/default/component/developer-portal-backstage/tech_docs/onboarding_guide/
+    # backstage.io/techdocs-ref: dir:.
+    ## (Optional) Use this to reference to your architecture decision records
+    # backstage.io/adr-location: docs/adrs
+    ## (Optional - Recommended) Add Datadog widgets and Dashboard or add a link to the links section above.
+    ## More info: https:/developer-portal.tractable.io/docs/default/component/developer-portal-backstage/service_catalog/integrations/datadog/
+    # datadoghq.com/site: datadoghq.com
+    # datadoghq.com/dashboard-url: https://p.datadoghq.com/sb/20c7f66d3-4ede29ded070264f1c0950c314f3ef3c
+    # datadoghq.com/graph-token: 12c89d5510f7f18c8f702a93c98fd7d1fe517189aeef0f05d966fe5ee3d71785
+    ## (Optional - Recommended) Add your Jira projects and component
+    ## More info: https:/developer-portal.tractable.io/docs/default/component/developer-portal-backstage/service_catalog/integrations/jira/
+    # jira/project-key: INFRA
+    # jira/component: Developer Portal
+    ## (Optional - Recommended) Link to your Pagerduty Service
+    ## More info: https:/developer-portal.tractable.io/docs/default/component/developer-portal-backstage/service_catalog/integrations/pagerduty/
+    # pagerduty.com/integration-key: 2efa1133d28e430cd07ba5ef4a86b4b0
+    ## (Optional - Recommended) Link to your Harness CI/CD pipelines and Services
+    ## More info: https:/developer-portal.tractable.io/docs/default/component/developer-portal-backstage/service_catalog/integrations/harness/
+    # harness.io/pipelines: |
+    #   DeveloperPortal: https://app.harness.io/ng/account/oXvBcrhMQiyEPrn2pi0nHQ/home/orgs/Tractable_ENG/projects/Application_Infrastructure_ENG/pipelines/frontenddeveloperportalbackstage/pipeline-studio/
+    # harness.io/services: |
+    #   DeveloperPortal: https://app.harness.io/ng/account/oXvBcrhMQiyEPrn2pi0nHQ/home/orgs/Tractable_ENG/projects/Application_Infrastructure_ENG/services/developerportal
+    ## (Optional) SonarQube project key
+    # sonarqube.org/project-key: tractableai_developer-portal-backstage_AYZarNkIlmESAGlSS9LY
+    ## (Required) An indication of the criticality of the component, high is a system that is critical to the business, medium is a system that is important but not critical, low is a system that is not critical
+    # tr/criticality: low
+    ## (Required) Indicates whether the component handles PII data, must be set to true or false but passed as a string
+    # tr/handles_pii: "false"
+
+  ## (Optional) Add additional tags
+  ## More info: https:/developer-portal.tractable.io/docs/default/component/developer-portal-backstage/service_catalog/faq/#question-about-common-attributes
+  tags:
+    # - cdk
+    # - serverless
+    # - nodejs
+    # - typescript
+spec:
+  ## (Required) The type of your Component
+  ## More info: https:/developer-portal.tractable.io/docs/default/component/developer-portal-backstage/service_catalog/faq/#questions-about-component-entities
+  type: service
+  ## (Required) What lifecycle is your entity in?
+  ## More info: https:/developer-portal.tractable.io/docs/default/component/developer-portal-backstage/service_catalog/faq/#questions-about-component-entities
+  lifecycle: production
+  ## (Required) Who owns this entity? Please use the metadata.name (not the title) of a group
+  ## More info: https:/developer-portal.tractable.io/catalog?filters%5Bkind%5D=group&filters%5Buser%5D=all
+  owner: ads
+  ## (Optional) Your entity might belong to a larger system
+  ## More info: https:/developer-portal.tractable.io/docs/default/component/developer-portal-backstage/service_catalog/faq/#questions-about-component-entities
+  # system: intranet-services
+  ## (Required) The domain of your entity. Use the url safe name of the domain as detailed in the software catalog
+  ## More info: https://tractable.atlassian.net/wiki/spaces/ENG/pages/3756032018/Tractable+Architecture+and+Concept+Model
+  ## domain: hosting-and-runtime-infrastructure
+---
